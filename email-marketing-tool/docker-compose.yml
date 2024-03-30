@@ -1,0 +1,72 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0.36
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DB
+    networks:
+      - email-marketing
+    ports:
+      - "3307:3306"
+    volumes:
+      - /home/data:/var/lib/mysql
+  eureka-server-registry:
+    image: "${DOCKER_HUB_USERNAME}/eureka-server-registry"
+    container_name: eureka-server-registry
+    networks:
+      - email-marketing
+    ports:
+      - "8763:8762"
+  email-marketing-gateway:
+    image: "${DOCKER_HUB_USERNAME}/email-marketing-gateway"
+    container_name: email-marketing-gateway
+    networks:
+      - email-marketing
+    ports:
+      - "8086:8085"
+    depends_on:
+      - eureka-server-registry
+    environment:
+      EUREKA_CLIENT_URL: ${EUREKA_CLIENT_URL}
+  core-service:
+    image: "${DOCKER_HUB_USERNAME}/core-service"
+    container_name: core-service
+    depends_on:
+      - mysql
+      - email-marketing-gateway
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MAX_FILE_SIZE: ${MAX_FILE_SIZE}
+      EUREKA_CLIENT_URL: ${EUREKA_CLIENT_URL}
+    networks:
+      - email-marketing
+    ports:
+      - "9011:9010"
+
+  auth-service:
+    image: "${DOCKER_HUB_USERNAME}/auth-service"
+    container_name: auth-service
+    depends_on:
+      - mysql
+      - core-service
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MAX_FILE_SIZE: ${MAX_FILE_SIZE}
+      SECRET_KEY: ${SECRET_KEY}
+      EUREKA_CLIENT_URL: ${EUREKA_CLIENT_URL}
+    ports:
+      - "9005:9005"
+    networks:
+      - email-marketing
+
+networks:
+  email-marketing:
+    driver: bridge

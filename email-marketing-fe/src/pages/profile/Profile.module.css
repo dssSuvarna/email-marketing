@@ -1,0 +1,12 @@
+.profile_input > div >input {
+    padding: 10px;
+}
+
+.button_clr {
+    background-color: #0f3165 !important;
+}
+
+.button_clr:disabled {
+    color: #fff !important;
+    background-color: #ccc !important;
+}

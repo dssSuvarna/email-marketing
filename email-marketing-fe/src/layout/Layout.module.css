@@ -1,0 +1,9 @@
+.child_component_large {
+    /* margin-left: 200px; */
+    padding: 20px 20px 20px 5px;
+}
+
+.child_component_small {
+    margin-left: 10px;
+    padding: 10px;
+}

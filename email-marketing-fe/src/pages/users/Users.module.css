@@ -1,0 +1,34 @@
+.pagination_icons>div>div:nth-child(5) {
+    display: flex !important;
+}
+
+.pagination_icons>div>div:nth-child(5)>button {
+    width: auto;
+}
+
+.user_input > div > input {
+    padding: 8px;
+}
+
+.users_table>thead>tr>th {
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #0f3165;
+    color: white;
+}
+
+.active_status {
+    color: #1f821f;
+    text-transform: lowercase;
+    padding: 5px;
+    border: 1px solid #1f821f;
+    border-radius: 10%;
+}
+
+.inactive_status {
+    color: #951e1e;
+    text-transform: lowercase;
+    padding: 5px;
+    border: 1px solid #951e1e;
+    border-radius: 10%;
+}

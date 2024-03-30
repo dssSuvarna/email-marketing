@@ -1,0 +1,36 @@
+.pagination_icons>div>div:nth-child(5) {
+    display: flex !important;
+}
+
+.pagination_icons>div>div:nth-child(5)>button {
+    width: auto;
+}
+
+.campaigns_table>thead>tr>th {
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #0f3165;
+    color: white;
+}
+
+.select_input > div:first-child {
+    padding: 8px;
+}
+
+.campaign_date > div:first-child > input {
+    padding: 8px;
+}
+
+.campaign_input > div > input {
+    padding: 8px;
+}
+
+.campaign_select_group > div > div:first-child {
+    padding: 0px;
+}
+
+.campaign_table > thead > tr > th {
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #8f9dad;
+}

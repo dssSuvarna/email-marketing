@@ -1,0 +1,12 @@
+.template_input > div > input {
+    padding: 8px;
+}
+
+.tab_list {
+    background-color: #ededed;
+    border-radius: 22px;
+}
+
+.tab_list > div:first-child > span {
+    display: none;
+}

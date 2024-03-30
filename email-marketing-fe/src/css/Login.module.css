@@ -1,0 +1,29 @@
+
+.login_container {
+  text-align: center;
+}
+
+.login_container > h2 {
+  text-transform: uppercase;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.login_input {
+  margin: 5px;
+  padding: 10px;
+}
+
+.login_button {
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #0f3165;
+  color: #fff;
+}

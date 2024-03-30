@@ -1,0 +1,23 @@
+.pagination_icons>div>div:nth-child(5) {
+    display: flex !important;
+}
+
+.pagination_icons>div>div:nth-child(5)>button {
+    width: auto;
+}
+
+.email_input>div>input {
+    padding: 8px;
+}
+
+.senders_table {
+    /* margin-top: 10px; */
+    box-shadow: 5px 5px 8px #555;
+}
+
+.senders_table>thead>tr>th {
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #0f3165;
+    color: white;
+}

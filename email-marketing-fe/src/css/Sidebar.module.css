@@ -1,0 +1,15 @@
+.sidebar_list > div {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.activeLink {
+    background-color: #2196f3;
+    color: white;
+}
+
+.icon_color {
+    color: #195aad;
+}
